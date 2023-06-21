@@ -89,7 +89,7 @@
         </div>
     </div>
     <script>
-        var gateway = "wss://home-automation/";
+        var gateway = `ws://${window.location.hostname}/ws`;
         var websocket;
 
         function initWebSocket() {
