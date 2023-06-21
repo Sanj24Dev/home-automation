@@ -89,12 +89,13 @@
         </div>
     </div>
     <script>
-        var gateway = `wss://${window.location.hostname}/wss`;
+        var gateway = `wss://https://sanj24dev.github.io/home-automation//wss`;
         var websocket;
 
         function initWebSocket() {
             console.log('Trying to open a WebSocket connection...');
             websocket = new WebSocket(gateway);
+            alert("Socket created")
             websocket.onopen = onOpen;
             websocket.onclose = onClose;
             websocket.onmessage = onMessage; // <-- add this line
@@ -102,10 +103,12 @@
 
         function onOpen(event) {
             console.log('Connection opened');
+            alert("Connection opened")
         }
 
         function onClose(event) {
             console.log('Connection closed');
+            alert("Connection closed")
             setTimeout(initWebSocket, 2000);
         }
 
